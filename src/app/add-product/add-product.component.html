@@ -1,0 +1,12 @@
+<form (ngSubmit)="addProduct(registerForm.value)" #registerForm="ngForm">
+  <div class="form-group">
+    <label for="userName">Name</label>
+    <input type="text" required class="form-control" name="name" placeholder="Enter name" ngModel>
+  </div>
+  <div class="form-group">
+    <label for="userName">qty</label>
+    <input type="text" required class="form-control" name="qty" placeholder="Enter qty" ngModel>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Register New Gym</button>
+</form>
