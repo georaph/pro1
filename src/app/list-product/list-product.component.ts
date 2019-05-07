@@ -3,8 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, Subject } from 'rxjs';
-import 'rxjs/add/operator/map'; 
+import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { SharedServiceService } from '../shared-service.service'
 
 
 
@@ -16,38 +20,47 @@ import 'rxjs/add/operator/catch';
   templateUrl: './list-product.component.html',
   styleUrls: ['./list-product.component.css']
 })
-export class ListProductComponent implements OnInit {
+export class ListProductComponent {
 
+  title = 'pro1';
   products
 
-  constructor(private http: HttpClient) {
-    alert()
-   // this.loadProducts();
+  constructor(private sharedService: SharedServiceService,
+    private route: ActivatedRoute,
+    private router: Router) {
+
+    this.getProducts()
 
   }
 
-  ngOnInit() {
-    alert()
+
+
+  getProducts() {
+    this.sharedService.loadProducts().subscribe(result => {
+
+      this.products = result;
+    });
+
+
   }
 
+  edit(id) {
 
-  loadProducts() {
+    this.router.navigateByUrl('/editProduct/' + id);
 
-    alert()
-    return this.http.get("http://localhost:3000/api/products")
+  }
 
-     
-    .map((response: Response) => {
-      alert(JSON.stringify(response))
-      var par = response.text();
-      
-      
-  });
-    // .map((data: any[]) => {
-      //   alert(JSON.stringify(data))
-      //   this.products = data;
-      //   return true;
-      // });
+  delete(id) {
+
+  
+    this.sharedService.deleteProductid(id).subscribe(result => {
+
+      if (result == 1) alert('deleted')
+      this.router.navigateByUrl('/addProduct');
+
+    });
+
+
   }
 
 }

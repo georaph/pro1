@@ -1,3 +1,27 @@
-<p>
-  list-product works!
-</p>
+<div style="text-align:center">
+
+  <table class="table ">
+    <thead >
+        <tr>
+            <th>SL#</th>
+            <th>name</th>
+            <th>qty</th>
+            
+            <!-- <th class="text-center">Details</th> -->
+        </tr>
+    </thead>
+    <tr *ngFor="let pro of products ; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{pro.productname  }}</td>
+        <td>{{ pro.qty  }}</td>
+        
+      
+        <td class="text-center"> <a  class="btn btn-info btn-xs" (click)="edit(pro.id)"><span class="glyphicon glyphicon-remove"></span> Edit</a>
+           <a  class="btn btn-info btn-xs" (click)="delete(pro.id)"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+        </td>
+    </tr>
+    <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+</table>
+
+
+</div>

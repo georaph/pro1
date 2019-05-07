@@ -11,28 +11,29 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AddProductComponent } from './add-product/add-product.component';
 
+import { AppRoutingModule } from './app-routing.module';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
- const routes: Routes = [
-   { path: 'listProduct', component: ListProductComponent },
-   { path: 'addProduct', component: AddProductComponent }
-  ]
+   
+   
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListProductComponent,
-    AddProductComponent
+    EditProductComponent,
+
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    AppRoutingModule,
+
     BrowserModule,
     HttpModule,
     FormsModule,
     HttpClientModule
   ],
   
-  exports: [RouterModule],
+
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -3,28 +3,9 @@
 
 
 
-  <table class="table ">
-    <thead >
-        <tr>
-            <th>SL#</th>
-            <th>name</th>
-            <th>qty</th>
-            
-            <!-- <th class="text-center">Details</th> -->
-        </tr>
-    </thead>
-    <tr *ngFor="let gym of products ; let i=index">
-        <td>{{i+1}}</td>
-        <td>{{gym.name  }}</td>
-        <td>{{ gym.qty  }}</td>
-        
-      
-        <!-- <td class="text-center"> <a href="#" class="btn btn-info btn-xs" (click)="open(gym.id)"><span class="glyphicon glyphicon-remove"></span> Details</a></td> -->
-    </tr>
-    <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
-</table>
-</div>
 
+</div>
+<router-outlet></router-outlet>
 
 <a class="nav-link" [routerLink]="'/addProduct'"> Add products</a>
 <a class="nav-link" [routerLink]="'/listProduct'"> List products</a>
