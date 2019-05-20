@@ -38,11 +38,15 @@ export class EditProductComponent implements OnInit {
   }
 
   getProductId(id) {
-    this.sharedService.getProductId(id).subscribe(result => {
+    this.sharedService.getProductId(id).subscribe(results => {
+      // var par=JSON.stringify(results)
+      // alert(par)
+    
 
-      this.id = result.id;
-      this.productname = result.productname
-      this.qty = result.qty
+
+       this.id = results.id;
+       this.productname = results.productname
+       this.qty = results.qty
     });
 
 
