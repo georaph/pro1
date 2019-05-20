@@ -44,9 +44,9 @@ export class EditProductComponent implements OnInit {
     
 
 
-       this.id = results.id;
-       this.productname = results.productname
-       this.qty = results.qty
+      // this.id = results.id;
+      // this.productname = results.productname
+      // this.qty = results.qty
     });
 
 

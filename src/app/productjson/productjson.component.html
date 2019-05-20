@@ -1,0 +1,20 @@
+<table class="table " style="width:500px;">
+  <thead >
+      <tr>
+          <th>SL#</th>
+          <th>name</th>
+          <th>qty</th>
+          
+          <!-- <th class="text-center">Details</th> -->
+      </tr>
+  </thead>
+  <tr *ngFor="let pro of products ; let i=index">
+      <td>{{i+1}}</td>
+      <td>{{pro.ProductID  }}</td>
+      <td>{{ pro.ProductName  }}</td>
+      
+    
+      
+  </tr>
+  <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+</table>

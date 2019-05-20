@@ -13,6 +13,9 @@ import { AddProductComponent } from './add-product/add-product.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { ProductjsonComponent } from './productjson/productjson.component';
+
+
 
    
    
@@ -22,6 +25,7 @@ import { EditProductComponent } from './edit-product/edit-product.component';
   declarations: [
     AppComponent,
     EditProductComponent,
+    ProductjsonComponent,
 
   ],
   imports: [
