@@ -27,7 +27,7 @@ export class RxjsComponent implements OnInit {
       setTimeout(() => {
         subscriber.next(5);
         subscriber.complete();
-      }, 0);
+      }, 1000);
       subscriber.next(14);
     });
 
