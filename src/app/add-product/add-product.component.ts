@@ -7,7 +7,7 @@ import { Observable, Subject } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { SharedServiceService } from '../shared-service.service'
+import { ProductService } from '../product.service'
 
 
 
@@ -21,7 +21,7 @@ export class AddProductComponent implements OnInit {
 
   name
   qty
-  constructor(private sharedService: SharedServiceService,
+  constructor(private sharedService: ProductService,
 
     private router: Router,
     private route: ActivatedRoute) { }

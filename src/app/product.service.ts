@@ -32,5 +32,17 @@ export class ProductService {
     //return this._http.get(this._producturl).pipe( map((data) => <IProduct[]>data),
       //tap(data => console.log(JSON.stringify(data)));
   }
+
+
+  addProduct(prod) {
+    console.log(this._producturl+'request ' + JSON.stringify(prod));
+    var token = sessionStorage.getItem('token');
+    return this._http.post("http://localhost:4200/product.json", prod)
+      .map((response: Response) => {
+        console.log('registered Gymowner');
+        var myJSON1 = JSON.stringify(response);
+        console.log(myJSON1);
+      })
+  }
 }
 

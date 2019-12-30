@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { ProductjsonComponent } from './productjson/productjson.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { AddOrdinaryComponent } from './add-ordinary/add-ordinary.component';
 
 
 
@@ -28,6 +29,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     EditProductComponent,
     ProductjsonComponent,
     RxjsComponent,
+    AddOrdinaryComponent,
 
   ],
   imports: [
