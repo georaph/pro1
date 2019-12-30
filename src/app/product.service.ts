@@ -7,8 +7,8 @@ import 'rxjs/add/operator/do';
 import { IProduct } from './product';
 
 import { Observable, Subject } from 'rxjs';
-import 'rxjs/add/operator/map';
-import { map ,tap} from 'rxjs/operators';
+//import 'rxjs/add/operator/map';
+import { map, tap ,catchError} from 'rxjs/operators';
 
 import 'rxjs/add/operator/catch';
 
@@ -34,11 +34,28 @@ export class ProductService {
     //return this._http.get(this._producturl).pipe( map((data) => <IProduct[]>data),
     //tap(data => console.log(JSON.stringify(data)));
   }
+  // getproducts(): Observable<IProduct[]> {
+  //   return this._http.get(this._producturl).pipe(
+  //     map((data) => <IProduct[]>data),
+  //     tap(data => console.log(JSON.stringify(data))));
+  // }
   getproducts(): Observable<IProduct[]> {
     return this._http.get(this._producturl).pipe(
-      map((data) => <IProduct[]>data),
-      tap(data => console.log(JSON.stringify(data))));
+      map((response) => <IProduct[]>response),
+      tap(data => console.log(JSON.stringify(data))),
+      catchError(this.handleError('ProductFetch')))
+
   }
+
+  handleError(operation, result?: Observable<IProduct[]>) {
+    return (error: any): Observable<IProduct[]> => {
+      console.log('Op=' + operation)
+      return operation;
+    };
+  }
+
+}
+
 
 }
 

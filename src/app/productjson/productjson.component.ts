@@ -22,9 +22,14 @@ export class ProductjsonComponent implements OnInit {
 
   getProducts()  {
     this.productService.getproducts().subscribe(result => {
+      this.products=result
+   
+    })
 
-      this.products = result;
-    });
+    
+    
+    }
+    
   }
 
 }
