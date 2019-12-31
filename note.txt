@@ -1,0 +1,2 @@
+https://www.devglan.com/javascript/rxjs-tutorial
+https://www.learnrxjs.io/
