@@ -1,2 +1,6 @@
 https://www.devglan.com/javascript/rxjs-tutorial
 https://www.learnrxjs.io/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+
+
+https://www.javacodegeeks.com/2019/04/angular-child-routes-example.html

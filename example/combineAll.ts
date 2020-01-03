@@ -32,3 +32,4 @@ example$
   ["Result (0): 4", "Result (1): 4"]
 */
   .subscribe(console.log);
+
