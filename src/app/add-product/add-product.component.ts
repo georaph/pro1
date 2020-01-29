@@ -18,7 +18,7 @@ import { SharedServiceService } from '../shared-service.service'
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-
+  pid
   name
   qty
   constructor(private sharedService: SharedServiceService,
@@ -31,7 +31,7 @@ export class AddProductComponent implements OnInit {
   }
 
   addProduct(data) {
-
+  
     this.sharedService.addProduct(data).subscribe(result => {
       alert('product added successfully')
       this.router.navigateByUrl('/listProduct');

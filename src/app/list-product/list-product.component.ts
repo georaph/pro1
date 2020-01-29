@@ -36,10 +36,34 @@ export class ListProductComponent {
 
 
   getProducts() {
-    this.sharedService.loadProducts().subscribe(result => {
+    var arr=new Array();
+    // var myObj={
+    //   "cars":[]
+    // };
 
-      this.products = result;
-    });
+     var myObj=JSON.parse(localStorage.getItem("user"));
+    var x;
+    for (var i in myObj.products) {
+      console.log( 'pid is '+myObj.products[i].pid)
+    } 
+    this.products =myObj.products;
+
+    //let item = JSON.parse(localStorage.getItem("user"));
+    // arr=localStorage.getItem("user")
+    // item.forEach(element => {
+    //   console.log('ff')
+    // });
+    //alert('x')
+    //var prod=localStorage.getItem("user");
+   // var obj=JSON.parse(prod)
+    //var obj=JSON.parse(prod)
+    // alert('pid'+JSON.parse(prod).pid)
+    // alert('name'+JSON.parse(prod).productname)
+    // alert('qty'+JSON.parse(prod).qty)
+    // // this.sharedService.loadProducts().subscribe(result => {
+
+    //    this.products = JSON.parse(prod);
+    // });
 
 
   }
