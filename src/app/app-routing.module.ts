@@ -10,7 +10,7 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 
 import { AddProductComponent } from './add-product/add-product.component';
 import { ProductjsonComponent } from './productjson/productjson.component';
-import { RxjsComponent } from './rxjs/rxjs.component';
+//import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 const routes: Routes = [
@@ -18,7 +18,7 @@ const routes: Routes = [
  { path: 'editProduct/:id', component: EditProductComponent },
   { path: 'listProduct', component: ListProductComponent },
   { path: 'productjson', component: ProductjsonComponent },
-  { path: 'rxjs', component: RxjsComponent }
+  //{ path: 'rxjs', component: RxjsComponent }
 ];
 
 @NgModule({

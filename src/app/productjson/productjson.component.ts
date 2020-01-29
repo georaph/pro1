@@ -19,6 +19,9 @@ export class ProductjsonComponent implements OnInit {
 
   ngOnInit() {
   }
+  ngOnChanges(){
+    alert('change')
+  }
 
   getProducts()  {
     this.productService.getproducts().subscribe(result => {
