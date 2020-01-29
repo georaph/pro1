@@ -36,10 +36,10 @@ export class AppComponent {
 
   }
   getProducts() {
-    this.sharedService.loadProducts().subscribe(result => {
-     // alert(JSON.stringify(result))
-     // console.log('logs' + result[0].gym_name)
-      this.products = result;
-    });
+    // this.sharedService.loadProducts().subscribe(result => {
+    //  // alert(JSON.stringify(result))
+    //  // console.log('logs' + result[0].gym_name)
+    //   this.products = result;
+    // });
   }
 }

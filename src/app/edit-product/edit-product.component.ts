@@ -19,7 +19,7 @@ import { SharedServiceService } from '../shared-service.service'
 })
 export class EditProductComponent implements OnInit {
 
-  id
+  pid
   product
   productname
   qty
@@ -27,7 +27,8 @@ export class EditProductComponent implements OnInit {
   constructor(private sharedService: SharedServiceService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+    
+  ) {this.productname='na' }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -38,16 +39,19 @@ export class EditProductComponent implements OnInit {
   }
 
   getProductId(id) {
-    this.sharedService.getProductId(id).subscribe(results => {
-      // var par=JSON.stringify(results)
-      // alert(par)
+
+    var results=this.sharedService.getProductId(id);
+    var par=JSON.stringify(results)
     
-
-
-      // this.id = results.id;
-      // this.productname = results.productname
-      // this.qty = results.qty
-    });
+      this.pid = results.pid;
+       this.productname = results.productname
+       this.qty = results.qty
+      
+    
+    
+    
+    
+   
 
 
   }
@@ -55,23 +59,24 @@ export class EditProductComponent implements OnInit {
   updateProductid(data) {
 
     var datas = {
+      "pid":"",
       "productname": "",
       "qty": "",
     };
+    datas.pid = this.pid
     datas.productname = this.productname
     datas.qty = this.qty
 
-    this.sharedService.updateProductid(this.id, datas).subscribe(result => {
-      alert('updated')
+    this.sharedService.updateProductid(this.pid, datas)
       this.router.navigateByUrl('/listProduct');
-    });
+    
 
   }
 
 
   deleteProductId(id) {
-    this.sharedService.deleteProductid(id).subscribe(result => {
-      if (result == 1) alert('deleted')
+    var result=this.sharedService.deleteProductid(id)
+      if(result == 1)
       this.router.navigateByUrl('/listProduct');
 
 

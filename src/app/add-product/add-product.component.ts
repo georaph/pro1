@@ -32,11 +32,9 @@ export class AddProductComponent implements OnInit {
 
   addProduct(data) {
   
-    this.sharedService.addProduct(data).subscribe(result => {
-      alert('product added successfully')
-      this.router.navigateByUrl('/listProduct');
-
-    })
+    var val=this.sharedService.addProduct(data);
+    if(val== 1 )
+    this.router.navigateByUrl('/listProduct');
   }
 
 }
